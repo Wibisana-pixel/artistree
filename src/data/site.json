@@ -27,17 +27,17 @@
   "releases": [],
   "links": [
     {
-      "label": "Website Nexyuspay",
-      "description": "Menyediakan berbagai kebutuhan produk digital, top up, dan aset editing dengan proses cepat.",
-      "url": "https://nexyuspay.my.id",
-      "icon": "website"
-    },
-    {
-      "label": "Saluran Whatsapp Nexyuspay",
+     "label": "Saluran Whatsapp Nexyuspay",
       "description": "Bergabung segera dan dapatkan diskonnya",
       "url": "https://whatsapp.com/channel/0029Vb4DqZIEquiKCgKoyT15",
       "icon": "Whatsapp",
       "cover": "/img/Profil_Nexyuspay.jpeg"
+    },
+    {
+     "label": "Website Nexyuspay",
+      "description": "Menyediakan berbagai kebutuhan produk digital, top up, dan aset editing dengan proses cepat.",
+      "url": "https://nexyuspay.my.id",
+      "icon": "website"
     },
     {
       "label": "Rating Dan Ulasan Nexyuspay",
