@@ -1,91 +1,49 @@
 {
   "config": {
     "title": "Nexyuspay",
-    "description": "Layanan Digital & Produk Kreatif.",
+    "description": "Nexyuspay.",
     "theme": "violet",
     "font": "modern",
     "copyright": "© 2026 Nexyuspay"
   },
   "artist": {
-    "name": "Singer Artist",
-    "description": "Cantante y compositor de música indie.",
-    "bio": "Creando musica desde siempre",
+    "name": "Nexyuspay",
+    "description": "Layanan Digital & Produk Kreatif",
+    "bio": "Menyediakan berbagai kebutuhan produk digital, top up, dan aset editing dengan proses cepat.",
     "picture": "/img/profile.webp"
   },
   "socials": {
-    "instagram": "https://instagram.com/franco",
-    "facebook": "https://facebook.com/franco",
-    "x": "https://x.com/franco",
-    "youtube": "https://youtube.com/franco",
-    "tiktok": "https://www.tiktok.com/@tuusuario"
+    "instagram": "https://www.instagram.com/nexyuspay?igsh=ZjRnNjZ2MjY2dWs3",
+    "facebook": "https://facebook.com/Nexyuspay",
+    "x": "https://x.com/",
+    "youtube": "https://youtube.com/",
+    "tiktok": "https://www.tiktok.com/@mynexyus"
   },
   "booking": {
-    "email": "booking@artistree.link",
-    "phone": "+54 911 2345 6789"
+    "email": "CEO +62 812 1312 6232",
+    "phone": "CS +62 838 7918 5234"
   },
-  "shows": [
-    {
-      "title": "Bailaso",
-      "date": "2025-09-12",
-      "city": "Córdoba",
-      "country": "AR",
-      "venue": "Club Paraguay",
-      "tickets": "https://mipass.com/entradas/xyz",
-      "available": true
-    },
-    {
-      "title": "Bailaso",
-      "date": "2025-10-05",
-      "city": "Madrid",
-      "country": "ES",
-      "venue": "Sala Caracol",
-      "tickets": "https://mipass.com/entradas/xyz",
-      "available": false
-    }
-  ],
-  "releases": [
-    {
-      "title": "Noche Eterna",
-      "album": "Noche Eterna Album",
-      "releaseDate": "2025-08-15",
-      "cover": "/img/covers/cover1.webp",
-      "links": {
-        "spotify": "https://open.spotify.com/track/...",
-        "applemusic": "https://music.apple.com/...",
-        "youtube": "https://www.youtube.com/watch?v=VxGW_AQwWfo"
-      }
-    },
-    {
-      "title": "Amanecer",
-      "album": "Noche Eterna Album",
-      "releaseDate": "2025-05-02",
-      "cover": "/img/covers/cover1.webp",
-      "links": {
-        "spotify": "https://open.spotify.com/track/...",
-        "applemusic": "https://music.apple.com/...",
-        "youtube": "https://www.youtube.com/watch?v=VxGW_AQwWfo"
-      }
-    }
-  ],
+  "shows": [],
+  "releases": [],
   "links": [
     {
-      "label": "Instagram Persona",
-      "description": "Perfil personal de Instagram",
-      "url": "https://open.spotify.com/artist/...",
+      "label": "Website Nexyuspay",
+      "description": "Menyediakan berbagai kebutuhan produk digital, top up, dan aset editing dengan proses cepat.",
+      "url": "https://nexyuspay.my.id",
       "icon": "website"
     },
     {
-      "label": "Instagram Productora",
-      "description": "Perfil de Instagram de la productora",
-      "url": "https://music.apple.com/artist/...",
-      "icon": "instagram",
+      "label": "Saluran Whatsapp Nexyuspay",
+      "description": "Bergabung segera dan dapatkan diskonnya",
+      "url": "https://whatsapp.com/channel/0029Vb4DqZIEquiKCgKoyT15",
+      "icon": "Whatsapp",
       "cover": "/img/profile.webp"
     },
     {
-      "label": "YouTube",
-      "description": "Canal de YouTube del artista",
-      "url": "https://www.youtube.com/channel/...",
-      "icon": "youtube"
+      "label": "Rating Dan Ulasan Nexyuspay",
+      "description": "Lihat bagaimana pendapat pembeli tentang toko Nexyuspay",
+      "url": "https://ulasan.nexyuspay.my.id/",
+      "icon": "website"
     }
   ]
 }
