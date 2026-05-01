@@ -44,6 +44,80 @@
       "description": "Lihat bagaimana pendapat pembeli tentang toko Nexyuspay",
       "url": "https://ulasan.nexyuspay.my.id/",
       "icon": "website"
+    },
+
+    {
+      "label": "➖➖ PORTOFOLIO KARYA SAYA ➖➖",
+      "description": "Kumpulan website & sistem yang saya kembangkan sendiri",
+      "url": "#",
+      "icon": "website"
+    },
+    {
+      "label": "1. ZassStore.id",
+      "description": "Platform toko top up game dan produk digital",
+      "url": "https://zassstore.id",
+      "icon": "website"
+    },
+    {
+      "label": "2. Platform Link in Bio",
+      "description": "Website mini seperti yang sedang Anda lihat ini",
+      "url": "#",
+      "icon": "website"
+    },
+    {
+      "label": "3. Sistem Pendaftaran Organisasi",
+      "description": "Platform formulir pendaftaran anggota baru",
+      "url": "#",
+      "icon": "website"
+    },
+    {
+      "label": "4. Online Resume",
+      "description": "Website portofolio CV dan data diri profesional",
+      "url": "#",
+      "icon": "website"
+    },
+    {
+      "label": "5. Zass Flip Gacha",
+      "description": "Web app mini game gacha berhadiah diskon",
+      "url": "#",
+      "icon": "website"
+    },
+
+    {
+      "label": "➖➖ WEBSITE BERMANFAAT ➖➖",
+      "description": "Alat bantu digital gratis yang sering saya gunakan",
+      "url": "#",
+      "icon": "website"
+    },
+    {
+      "label": "1. iLovePDF",
+      "description": "Ubah, gabungkan, dan edit file PDF dengan mudah",
+      "url": "https://www.ilovepdf.com/id",
+      "icon": "website"
+    },
+    {
+      "label": "2. QR Code Generator",
+      "description": "Ubah link, teks, atau kontak apapun menjadi kode QR",
+      "url": "https://www.qr-code-generator.com/",
+      "icon": "website"
+    },
+    {
+      "label": "3. Canva Education",
+      "description": "Platform desain grafis lengkap untuk pemula",
+      "url": "https://www.canva.com/",
+      "icon": "website"
+    },
+    {
+      "label": "4. Vercel Hosting",
+      "description": "Layanan hosting gratis dan super cepat",
+      "url": "https://vercel.com/",
+      "icon": "website"
+    },
+    {
+      "label": "5. GitHub",
+      "description": "Tempat menyimpan dan mengelola repository kodingan",
+      "url": "https://github.com/",
+      "icon": "website"
     }
   ]
 }
