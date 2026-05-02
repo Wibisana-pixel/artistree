@@ -1,18 +1,60 @@
 ---
-import Section from "./Section.astro";
 import LinkCard from "./LinkCard.astro";
 
-// Menangkap data 'links' dan 'title' yang dikirim dari index.astro
+// Menangkap data 'links' dan 'title' dari index.astro
 const { links, title } = Astro.props;
+
+// Memisahkan 3 link pertama dan sisanya untuk disembunyikan
+const hasMore = links.length > 3;
+const initialLinks = links.slice(0, 3);
+const hiddenLinks = links.slice(3);
 ---
 
-{/* Mengganti teks Spanyol bawaan dengan variabel 'title' yang kita buat */}
-<Section title={title}>
+<section class="link-section bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/10 shadow-xl mb-6">
+  
+  {/* Mengganti teks Spanyol dengan Judul dari site.json */}
+  {title && <h2 class="text-xl font-bold mb-6 text-white text-center uppercase tracking-wider">{title}</h2>}
+  
   <div class="flex flex-col gap-4">
-    {
-      links.map((link: any) => (
-        <LinkCard {...link} />
-      ))
-    }
+    {/* Menampilkan 3 link teratas */}
+    {initialLinks.map((link: any) => (
+      <LinkCard {...link} />
+    ))}
+    
+    {/* Menyembunyikan link ke-4 dan seterusnya ke dalam kotak rahasia */}
+    {hasMore && (
+      <div class="more-links hidden flex flex-col gap-4 mt-0">
+        {hiddenLinks.map((link: any) => (
+          <LinkCard {...link} />
+        ))}
+      </div>
+    )}
   </div>
-</Section>
+
+  {/* Tombol Lihat Semua yang hanya muncul jika link lebih dari 3 */}
+  {hasMore && (
+    <button class="toggle-btn mt-5 w-full py-2.5 px-4 bg-white/5 hover:bg-white/20 text-white rounded-xl border border-white/20 transition-all text-sm font-semibold tracking-wide">
+      Lihat Semua 🔽
+    </button>
+  )}
+</section>
+
+<script>
+  // Robot Javascript kecil untuk efek buka-tutup saat tombol diklik
+  const sections = document.querySelectorAll('.link-section');
+  sections.forEach(section => {
+    const btn = section.querySelector('.toggle-btn');
+    const moreDiv = section.querySelector('.more-links');
+    
+    if (btn && moreDiv) {
+      btn.addEventListener('click', () => {
+        moreDiv.classList.toggle('hidden');
+        if (moreDiv.classList.contains('hidden')) {
+          btn.innerHTML = 'Lihat Semua 🔽';
+        } else {
+          btn.innerHTML = 'Sembunyikan 🔼';
+        }
+      });
+    }
+  });
+</script>
