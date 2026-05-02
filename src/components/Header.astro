@@ -16,10 +16,16 @@ const { name, bio, description, links = {}, picture }: Props = Astro.props;
 ---
 
 <Section>
-  <header class="py-2 text-center">
+  {/* Tambahkan 'relative' di header agar tombol share bebas di pojok */}
+  <header class="py-2 text-center relative">
     
+    {/* Tombol Share (Dikembalikan ke pojok kanan atas kotak utama) */}
+    <div class="absolute top-0 right-2 sm:right-4 flex items-center justify-center bg-white/10 backdrop-blur-xl rounded-full p-2.5 border border-white/20 cursor-pointer hover:bg-white/30 hover:scale-110 transition-all shadow-lg z-10" id="share-button">
+      <ShareIcon class="text-white size-4" />
+    </div>
+
     {/* BAGIAN FOTO PROFIL & IKON DIAMOND */}
-    <div class="relative mb-6 inline-block">
+    <div class="relative mb-6 mt-4 inline-block">
       <Image
         src={picture}
         alt={name}
@@ -37,11 +43,6 @@ const { name, bio, description, links = {}, picture }: Props = Astro.props;
           <path d="M11 3 8 9l4 13 4-13-3-6"/>
           <path d="M2 9h20"/>
         </svg>
-      </div>
-      
-      {/* Tombol Share (POSISI SUDAH DIPERBAIKI) */}
-      <div class="absolute top-0 right-0 flex items-center justify-center bg-black/40 backdrop-blur-xl rounded-full p-2.5 border border-white/20 cursor-pointer hover:bg-white/30 hover:scale-110 transition-all shadow-lg" id="share-button">
-        <ShareIcon class="text-white size-4" />
       </div>
     </div>
 
