@@ -29,14 +29,18 @@ const releases = Array.isArray(site?.releases)
       .sort((a, b) => b.releaseDate.localeCompare(a.releaseDate))
   : [];
 
-const allLinks = Array.isArray(site?.links)
-  ? site.links.filter(isValidLink)
+// MENDETEKSI KELOMPOK LINK DARI site.json
+const sections = Array.isArray(site?.sections)
+  ? site.sections.map(sec => ({
+      ...sec,
+      links: Array.isArray(sec.links) ? sec.links.filter(isValidLink) : []
+    })).filter(sec => sec.links.length > 0)
   : [];
 
 const showUpcoming = upcomingShows.length > 0;
 const showReleases = releases.length > 0;
 const showBooking = hasBooking(site?.booking);
-const showLinks = allLinks.length > 0;
+const showSections = sections.length > 0;
 
 ---
 
@@ -53,7 +57,10 @@ const showLinks = allLinks.length > 0;
 
     {showReleases && <ReleasesList releases={releases} />}
 
-    {showLinks && <ExternalLinks links={site?.links ?? []} />}
+    {/* MENCETAK KOTAK TERPISAH UNTUK SETIAP KELOMPOK */}
+    {showSections && sections.map((section) => (
+      <ExternalLinks title={section.title} links={section.links} />
+    ))}
 
     {showBooking && <Booking {...site.booking} />}
 
