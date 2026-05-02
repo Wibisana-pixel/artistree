@@ -1,25 +1,18 @@
 ---
-import Section from "../layouts/Section.astro";
+import Section from "./Section.astro";
 import LinkCard from "./LinkCard.astro";
 
-interface Links {
-  label: string;
-  description: string;
-  url: string;
-  icon: string;
-  cover?: string;
-}
-const { links = [] as Links[] } = Astro.props;
+// Menangkap data 'links' dan 'title' yang dikirim dari index.astro
+const { links, title } = Astro.props;
 ---
 
-<Section title="Otros enlaces">
-  {
-    (
-      <div class="space-y-3 text-left">
-        {links.map((l: Links) => (
-          <LinkCard {...l} />
-        ))}
-      </div>
-    )
-  }
+{/* Mengganti teks Spanyol bawaan dengan variabel 'title' yang kita buat */}
+<Section title={title}>
+  <div class="flex flex-col gap-4">
+    {
+      links.map((link: any) => (
+        <LinkCard {...link} />
+      ))
+    }
+  </div>
 </Section>
