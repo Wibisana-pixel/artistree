@@ -1,6 +1,6 @@
 ---
 import Section from "../layouts/Section.astro";
-import { MusicIcon, ShareIcon } from "../icons";
+import { ShareIcon } from "../icons";
 import SocialIcons from "./SocialIcons.astro";
 import { Image } from 'astro:assets';
 
@@ -16,63 +16,100 @@ const { name, bio, description, links = {}, picture }: Props = Astro.props;
 ---
 
 <Section>
-  <header class="py-2">
-    <div class="relative mb-6">
+  <header class="py-2 text-center">
+    
+    {/* BAGIAN FOTO PROFIL & IKON DIAMOND */}
+    <div class="relative mb-6 inline-block">
       <Image
         src={picture}
         alt={name}
         loading="eager"
-        class="w-32 h-32 rounded-full mx-auto border-2 border-white/20 shadow-2xl object-cover backdrop-blur-xl bg-white/5"
+        class="w-32 h-32 rounded-full mx-auto border-2 border-white/20 shadow-[0_0_20px_rgba(139,92,246,0.3)] object-cover backdrop-blur-xl bg-white/5"
         height={128}
         width={128}
       />
+      {/* Ikon Diamond Pengganti Musik */}
       <div
-        class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-xl rounded-full p-2 border border-white/20"
+        class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-black/40 backdrop-blur-xl rounded-full p-2 border border-violet-500/50 shadow-[0_0_10px_rgba(139,92,246,0.5)]"
       >
-        <MusicIcon class="text-white size-5" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300">
+          <path d="M6 3h12l4 6-10 13L2 9Z"/>
+          <path d="M11 3 8 9l4 13 4-13-3-6"/>
+          <path d="M2 9h20"/>
+        </svg>
       </div>
-      <div class="absolute top-0 right-0 flex items-center justify-center bg-white/10 backdrop-blur-xl rounded-full p-2 border border-white/20 cursor-pointer hover:bg-white/20 transition-colors" id="share-button">
-        <ShareIcon class="text-foreground" />
+      
+      {/* Tombol Share */}
+      <div class="absolute top-0 -right-4 flex items-center justify-center bg-white/10 backdrop-blur-xl rounded-full p-2 border border-white/20 cursor-pointer hover:bg-white/30 hover:scale-110 transition-all shadow-lg" id="share-button">
+        <ShareIcon class="text-white size-4" />
       </div>
     </div>
-    <h1 class="text-3xl font-bold text-foreground mb-2">{name}</h1>
-    <p class="text-foreground/80 text-lg">{description}</p>
-    <p class="text-foreground/60 text-sm mt-2">
-      {bio}
-    </p>
-    <div class="flex w-full items-start justify-center py-4 mt-4">
+
+    {/* NAMA & CENTANG BIRU VERIFIED */}
+    <div class="flex items-center justify-center gap-2 mb-1">
+      <h1 class="text-3xl font-bold text-white tracking-wide">{name}</h1>
+      <svg viewBox="0 0 24 24" aria-label="Verified" class="w-7 h-7 text-blue-500 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]"><g><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.918-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.337 2.25c-.416-.165-.866-.25-1.336-.25-2.21 0-3.918 1.792-3.918 4 0 .495.084.965.238 1.4-1.273.65-2.148 2.02-2.148 3.6 0 1.46.728 2.753 1.848 3.444A3.985 3.985 0 0 0 3.2 16.5c0 2.21 1.71 4 3.918 4 .47 0 .92-.086 1.336-.25.52 1.333 1.817 2.25 3.337 2.25 1.51 0 2.816-.917 3.337-2.25.415.164.865.25 1.336.25 2.21 0 3.918-1.792 3.918-4 0-.495-.084-.965-.238-1.4 1.274-.65 2.148-2.02 2.148-3.6z" fill="currentColor"></path><path d="M10.94 15.116l-3.35-3.352 1.52-1.516 1.83 1.834 4.56-4.565 1.52 1.516-6.08 6.083z" fill="white"></path></g></svg>
+    </div>
+    
+    <p class="text-cyan-300 text-sm font-medium tracking-widest uppercase mb-4">{description}</p>
+
+    {/* KOTAK BIODATA CYBERPUNK */}
+    <div class="relative mt-2 mb-6 p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-violet-500/30 shadow-[0_0_15px_rgba(139,92,246,0.1)] overflow-hidden text-left max-w-sm mx-auto">
+      {/* Garis Neon Aksesoris */}
+      <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-violet-400 to-transparent opacity-50"></div>
+      <div class="absolute bottom-0 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-50"></div>
+      
+      <div class="bg-black/20 p-3 rounded-xl border border-white/5 text-sm space-y-2">
+        <div class="flex justify-between border-b border-white/5 pb-1">
+          <span class="text-white/50">Pemilik:</span> 
+          <span class="font-semibold text-white">Yusuf</span>
+        </div>
+        <div class="flex justify-between border-b border-white/5 pb-1">
+          <span class="text-white/50">Peran:</span> 
+          <span class="font-semibold text-white text-right">CEO & Web Developer</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-white/50">Fokus:</span> 
+          <span class="font-semibold text-white text-right">Layanan Digital & Produk Kreatif</span>
+        </div>
+      </div>
+      
+      <p class="text-white/70 text-xs mt-3 text-center italic px-2">
+        "{bio}"
+      </p>
+    </div>
+
+    {/* MEDIA SOSIAL */}
+    <div class="flex w-full items-start justify-center pb-2">
       <SocialIcons links={links} size={32} section="header" />
     </div>
   </header>
 </Section>
 
 <script>
+  // Script Share yang sudah di-translate ke Bahasa Indonesia
   document.addEventListener('DOMContentLoaded', () => {
     const shareButton = document.getElementById('share-button');
     
     if (shareButton) {
       shareButton.addEventListener('click', async () => {
         try {
-          // Verificar si el navegador soporta Web Share API
           if (navigator.share && navigator.canShare) {
             const shareData = {
               title: document.title,
-              text: 'Echa un vistazo a este perfil de artista',
+              text: 'Lihat layanan digital resmi Nexyuspay',
               url: window.location.href
             };
             
-            // Verificar si los datos son válidos para compartir
             if (navigator.canShare(shareData)) {
               await navigator.share(shareData);
               return;
             }
           }
           
-          // Fallback: copiar al portapapeles
           if (navigator.clipboard && window.isSecureContext) {
             await navigator.clipboard.writeText(window.location.href);
           } else {
-            // Fallback para contextos no seguros
             const textArea = document.createElement('textarea');
             textArea.value = window.location.href;
             document.body.appendChild(textArea);
@@ -81,19 +118,18 @@ const { name, bio, description, links = {}, picture }: Props = Astro.props;
             document.body.removeChild(textArea);
           }
           
-          // Mostrar feedback visual temporal
+          // Efek visual sukses
           const originalContent = shareButton.innerHTML;
-          shareButton.innerHTML = '<span class="text-green-400 text-sm">¡Copiado!</span>';
+          shareButton.innerHTML = '<span class="text-green-400 text-xs font-bold px-1">Tersalin!</span>';
           setTimeout(() => {
             shareButton.innerHTML = originalContent;
           }, 2000);
           
         } catch (error) {
           if (typeof error === 'object' && error !== null && 'name' in error && (error as { name?: string }).name !== 'AbortError') {
-            console.error('Error al compartir:', error);
-            // Mostrar feedback de error
+            console.error('Error membagikan:', error);
             const originalContent = shareButton.innerHTML;
-            shareButton.innerHTML = '<span class="text-red-400 text-sm">Error</span>';
+            shareButton.innerHTML = '<span class="text-red-400 text-xs font-bold px-1">Error</span>';
             setTimeout(() => {
               shareButton.innerHTML = originalContent;
             }, 2000);
