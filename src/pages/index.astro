@@ -18,45 +18,52 @@ const artist = site?.artist ?? {};
 
 // normalizo y filtro datos
 const allShows = Array.isArray(site?.shows)
-  ? site.shows.filter(isValidShow)
-  : [];
+  ? site.shows.filter(isValidShow)
+  : [];
 const today = new Date().toISOString().slice(0, 10); // "YYYY-MM-DD"
 const upcomingShows = allShows.filter((s) => s.date >= today);
 
 const releases = Array.isArray(site?.releases)
-  ? site.releases
-      .filter(isValidRelease)
-      .sort((a, b) => b.releaseDate.localeCompare(a.releaseDate))
-  : [];
+  ? site.releases
+      .filter(isValidRelease)
+      .sort((a, b) => b.releaseDate.localeCompare(a.releaseDate))
+  : [];
 
-const allLinks = Array.isArray(site?.links)
-  ? site.links.filter(isValidLink)
-  : [];
+// MENDETEKSI KELOMPOK LINK DARI site.json
+const sections = Array.isArray(site?.sections)
+  ? site.sections.map(sec => ({
+      ...sec,
+      links: Array.isArray(sec.links) ? sec.links.filter(isValidLink) : []
+    })).filter(sec => sec.links.length > 0)
+  : [];
 
 const showUpcoming = upcomingShows.length > 0;
 const showReleases = releases.length > 0;
 const showBooking = hasBooking(site?.booking);
-const showLinks = allLinks.length > 0;
+const showSections = sections.length > 0;
 
 ---
 
 <Layout
-  theme={theme}
-  title={site.config.title}
-  description={site.config.description}
-  font={font}
+  theme={theme}
+  title={site.config.title}
+  description={site.config.description}
+  font={font}
 >
-  <div class="relative z-10 max-w-xl mx-auto px-2 py-8 space-y-6">
-    <Header {...artist} links={site?.socials ?? {}} />
+  <div class="relative z-10 max-w-xl mx-auto px-2 py-8 space-y-6">
+    <Header {...artist} links={site?.socials ?? {}} />
 
-    {showUpcoming && <UpcomingShows shows={upcomingShows} />}
+    {showUpcoming && <UpcomingShows shows={upcomingShows} />}
 
-    {showReleases && <ReleasesList releases={releases} />}
+    {showReleases && <ReleasesList releases={releases} />}
 
-    {showLinks && <ExternalLinks links={site?.links ?? []} />}
+    {/* MENCETAK KOTAK TERPISAH UNTUK SETIAP KELOMPOK */}
+    {showSections && sections.map((section) => (
+      <ExternalLinks title={section.title} links={section.links} />
+    ))}
 
-    {showBooking && <Booking {...site.booking} />}
+    {showBooking && <Booking {...site.booking} />}
 
-    <Footer copyright={site?.config?.copyright} />
-  </div>
+    <Footer copyright={site?.config?.copyright} />
+  </div>
 </Layout>
