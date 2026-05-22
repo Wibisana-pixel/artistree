@@ -1,82 +1,84 @@
 {
   "config": {
-    "title": "Nexyuspay",
-    "description": "Nexyuspay.",
+    "title": "Nexyuspay | Layanan Digital",
+    "description": "Pusat layanan digital dan top up game terpercaya",
     "theme": "violet",
     "font": "modern",
     "copyright": "© 2026 Nexyuspay"
   },
   "artist": {
     "name": "Nexyuspay",
-    "description": "Layanan Digital & Produk Kreatif",
-    "bio": "Menyediakan berbagai kebutuhan produk digital, top up, dan aset editing dengan proses cepat.",
-    "picture": "/img/Profil_Nexyuspay.jpeg"
+    "description": "Layanan Digital & Produk Kreatif.",
+    "bio": "Menyediakan berbagai kebutuhan produk digital, top up, dan aset editing dengan proses cepat",
+    "picture": "/logo-nexyus.png"
   },
   "socials": {
-    "instagram": "https://www.instagram.com/nexyuspay?igsh=ZjRnNjZ2MjY2dWs3",
+    "instagram": "https://www.instagram.com/nexyuspay",
     "facebook": "https://facebook.com/Nexyuspay",
-    "x": "https://x.com/",
-    "youtube": "https://youtube.com/",
     "tiktok": "https://www.tiktok.com/@mynexyus"
   },
   "shows": [],
   "releases": [],
   "sections": [
     {
-      "title": "LAYANAN UTAMA",
+      "title": "🔥 MUST SEE: KARYA TERBAIK SAYA",
       "links": [
         {
-          "label": "Saluran Whatsapp Nexyuspay",
-          "description": "Bergabung segera dan dapatkan diskonnya",
-          "url": "https://whatsapp.com/channel/0029Vb4DqZIEquiKCgKoyT15",
-          "icon": "Whatsapp",
-          "cover": "/img/Profil_Nexyuspay.jpeg"
-        },
-        {
-          "label": "Website Nexyuspay",
-          "description": "Menyediakan berbagai kebutuhan produk digital, top up, dan aset editing dengan proses cepat.",
-          "url": "https://nexyuspay.my.id",
+          "label": "ZassStore.id - Top Up Game",
+          "description": "Platform e-commerce top up game & voucher digital yang saya bangun dari nol.",
+          "url": "https://zassstore.id",
           "icon": "website"
         },
         {
-          "label": "Rating Dan Ulasan Nexyuspay",
-          "description": "Lihat bagaimana pendapat pembeli tentang toko Nexyuspay",
-          "url": "https://ulasan.nexyuspay.my.id/",
+          "label": "Zass Flip Gacha V5.1",
+          "description": "Mainkan mini game seru buatan saya dan menangkan diskon menarik!",
+          "url": "#",
           "icon": "website"
         }
       ]
     },
     {
-      "title": "PORTOFOLIO KARYA SAYA",
+      "title": "LAYANAN UTAMA",
       "links": [
         {
-          "label": "1. ZassStore.id",
-          "description": "Platform toko top up game dan produk digital",
-          "url": "https://zassstore.id",
+          "label": "Saluran WhatsApp Nexyuspay",
+          "description": "Dapatkan Voucher diskon eksklusif dan info terbaru.",
+          "url": "https://whatsapp.com/channel/0029Vb4DqZIEquiKCgKoyT15",
+          "cover": "/logo-nexyus.png"
+        },
+        {
+          "label": "Website Resmi Nexyuspay",
+          "description": "Pusat Top Up & Produk Digital 24 Jam Nonstop.",
+          "url": "https://nexyuspay.my.id",
+          "icon": "website"
+        }
+      ]
+    },
+    {
+      "title": "🛒 ETALASE PRODUK & LAYANAN",
+      "links": [
+        {
+          "label": "Jasa Pembuatan Link Bio Premium",
+          "description": "Buat website Link in Bio profesional seperti ini lengkap dengan fitur etalase.",
+          "price": "Rp 150.000",
+          "buttonText": "Pesan Via WhatsApp",
+          "url": "https://wa.me/6281213126232?text=Halo%20Yusuf,%20saya%20tertarik%20ingin%20membuat%20website%20Link%20Bio%20Premium.",
+          "cover": "/logo-nexyus.png"
+        },
+        {
+          "label": "Source Code ZassStore",
+          "description": "Script lengkap untuk membuat website top up game otomatis milikmu sendiri.",
+          "price": "Mulai Rp 350.000",
+          "buttonText": "Beli Sekarang",
+          "url": "https://wa.me/6281213126232?text=Halo%20Admin,%20saya%20mau%20bertanya%20tentang%20Source%20Code%20ZassStore.",
           "icon": "website"
         },
         {
-          "label": "2. Platform Link in Bio",
-          "description": "Website mini seperti yang sedang Anda lihat ini",
-          "url": "#",
-          "icon": "website"
-        },
-        {
-          "label": "3. Sistem Pendaftaran Organisasi",
-          "description": "Platform formulir pendaftaran anggota baru",
-          "url": "#",
-          "icon": "website"
-        },
-        {
-          "label": "4. Online Resume",
-          "description": "Website portofolio CV dan data diri profesional",
-          "url": "#",
-          "icon": "website"
-        },
-        {
-          "label": "5. Zass Flip Gacha",
-          "description": "",
-          "url": "#",
+          "label": "Pembuatan Web Organisasi",
+          "description": "Sistem pendaftaran anggota organisasi / instansi berbasis web.",
+          "price": "Tanya Harga",
+          "buttonText": "Konsultasi Gratis",
+          "url": "https://wa.me/6281213126232?text=Halo,%20saya%20ingin%20konsultasi%20pembuatan%20website%20organisasi.",
           "icon": "website"
         }
       ]
