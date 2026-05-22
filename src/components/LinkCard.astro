@@ -1,9 +1,7 @@
 ---
-import { Image } from "astro:assets";
-import { ExternalLinkIcon } from "../icons";
 import RenderIcon from "./RenderIcon.astro";
 
-// Menambahkan penerima data 'price' dan 'buttonText'
+// Menangkap data dari site.json
 const { label, description, url, icon, cover, price, buttonText } = Astro.props;
 ---
 
@@ -14,26 +12,22 @@ const { label, description, url, icon, cover, price, buttonText } = Astro.props;
   class="group relative flex items-center justify-between p-4 mb-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-violet-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all overflow-hidden"
 >
   <div class="flex items-center gap-4 w-full relative z-10">
-    {/* Menampilkan Gambar/Cover Produk jika ada */}
-    {
-      cover ? (
-        <div class="flex-shrink-0">
-          <Image
-            src={cover}
-            alt={label}
-            width={64}
-            height={64}
-            class="w-16 h-16 rounded-xl object-cover shadow-md border border-white/10 group-hover:scale-105 transition-transform"
-          />
-        </div>
-      ) : icon ? (
-        <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-white/5 rounded-xl border border-white/10 group-hover:scale-105 transition-transform">
-          <RenderIcon icon={icon} class="w-8 h-8 text-white/70" />
-        </div>
-      ) : null
-    }
+    {/* Gambar Cover Produk pakai img standar agar tidak eror */}
+    {cover ? (
+      <div class="flex-shrink-0">
+        <img
+          src={cover}
+          alt={label}
+          class="w-16 h-16 rounded-xl object-cover shadow-md border border-white/10 group-hover:scale-105 transition-transform"
+        />
+      </div>
+    ) : icon ? (
+      <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-white/5 rounded-xl border border-white/10 group-hover:scale-105 transition-transform">
+        <RenderIcon icon={icon} class="w-8 h-8 text-white/70" />
+      </div>
+    ) : null}
 
-    {/* Info Produk / Link */}
+    {/* Info Produk */}
     <div class="flex flex-col flex-1 min-w-0">
       <h3 class="text-white font-bold text-lg truncate group-hover:text-violet-300 transition-colors">
         {label}
@@ -45,14 +39,14 @@ const { label, description, url, icon, cover, price, buttonText } = Astro.props;
         </p>
       )}
 
-      {/* TAMPILAN HARGA (Hanya muncul kalau diisi di site.json) */}
+      {/* TAMPILAN HARGA */}
       {price && (
         <div class="mt-2 text-cyan-300 font-extrabold tracking-wide">
           {price}
         </div>
       )}
 
-      {/* TOMBOL BELI WA (Hanya muncul kalau diisi di site.json) */}
+      {/* TOMBOL BELI WA */}
       {buttonText && (
         <div class="mt-2 inline-block">
           <span class="bg-green-500/20 text-green-400 border border-green-500/50 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center gap-1 w-max group-hover:bg-green-500 group-hover:text-white transition-colors">
@@ -64,7 +58,8 @@ const { label, description, url, icon, cover, price, buttonText } = Astro.props;
     </div>
   </div>
 
+  {/* Ikon Eksternal Link SVG Manual Anti Eror */}
   <div class="flex-shrink-0 ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all z-10">
-    <ExternalLinkIcon class="w-5 h-5 text-white" />
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
   </div>
 </a>
