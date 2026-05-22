@@ -27,6 +27,7 @@
           "label": "Nexyuspay - My Portofolio",
           "description": "Kumpulan hasil sistem dan proyek web buatan saya.",
           "url": "https://portofolio.nexyuspay.my.id",
+          "cover": "/img/Profil_Nexyuspay.jpeg",
           "icon": "website"
         }
       ]
@@ -45,6 +46,7 @@
           "label": "Website Resmi Nexyuspay",
           "description": "Pusat Top Up & Produk Digital 24 Jam Nonstop.",
           "url": "https://nexyuspay.my.id",
+          "cover": "/img/Profil_Nexyuspay.jpeg",
           "icon": "website"
         }
       ]
@@ -67,6 +69,7 @@
           "price": "Mulai Rp 350.000",
           "buttonText": "Beli Sekarang",
           "url": "https://wa.me/6281213126232?text=Halo%20Admin,%20saya%20mau%20bertanya%20tentang%20Source%20Code%20ZassStore.",
+          "cover": "/img/Profil_Nexyuspay.jpeg",
           "icon": "website"
         },
         {
@@ -75,6 +78,7 @@
           "price": "Tanya Harga",
           "buttonText": "Konsultasi Gratis",
           "url": "https://wa.me/6281213126232?text=Halo,%20saya%20ingin%20konsultasi%20pembuatan%20website%20organisasi.",
+          "cover": "/img/Profil_Nexyuspay.jpeg",
           "icon": "website"
         }
       ]
