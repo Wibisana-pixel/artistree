@@ -1,5 +1,5 @@
 ---
-// Tanpa Import sama sekali agar 100% aman dari bentrok file
+// Jurus Pamungkas: Posisi Absolut Mandiri agar 100% Tidak Kepotong
 
 interface Props {
   label: string;
@@ -9,7 +9,7 @@ interface Props {
   cover?: string;
   price?: string;
   buttonText?: string;
-  [key: string]: any; // Mencegah error jika ada sisa data lama
+  [key: string]: any;
 }
 
 const { label, description, url, cover, price, buttonText } = Astro.props;
@@ -19,13 +19,15 @@ const { label, description, url, cover, price, buttonText } = Astro.props;
   href={url}
   target="_blank"
   rel="noopener noreferrer"
-  class="group relative flex items-center justify-between p-4 pr-5 mb-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-violet-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all overflow-hidden"
+  class="group relative flex items-center p-4 pr-14 mb-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-violet-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all overflow-hidden"
 >
+  {/* pr-14 di atas ngasih ruang kosong permanen di kanan untuk ikon */}
+
   <div class="flex items-center gap-4 w-full relative z-10">
     
-    {/* Logika Gambar/Ikon Mandiri */}
+    {/* Logika Gambar/Ikon */}
     {cover ? (
-      <div class="flex-shrink-0">
+      <div class="flex-shrink-0 relative z-10">
         <img
           src={cover}
           alt={label}
@@ -33,7 +35,7 @@ const { label, description, url, cover, price, buttonText } = Astro.props;
         />
       </div>
     ) : (
-      <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-white/5 rounded-xl border border-white/10 group-hover:scale-105 transition-transform">
+      <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-white/5 rounded-xl border border-white/10 group-hover:scale-105 transition-transform relative z-10">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/70">
           <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
           <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
@@ -41,8 +43,8 @@ const { label, description, url, cover, price, buttonText } = Astro.props;
       </div>
     )}
 
-    {/* Info Produk & Layanan (Ditambah pr-2 biar nggak nabrak ikon) */}
-    <div class="flex flex-col flex-1 min-w-0 pr-2">
+    {/* Info Produk (min-w-0 wajib biar truncate jalan) */}
+    <div class="flex flex-col flex-1 min-w-0 relative z-10 pr-2">
       <h3 class="text-white font-bold text-lg truncate group-hover:text-violet-300 transition-colors">
         {label}
       </h3>
@@ -53,14 +55,12 @@ const { label, description, url, cover, price, buttonText } = Astro.props;
         </p>
       )}
 
-      {/* TAMPILAN HARGA */}
       {price && (
         <div class="mt-2 text-cyan-300 font-extrabold tracking-wide">
           {price}
         </div>
       )}
 
-      {/* TOMBOL BELI WA */}
       {buttonText && (
         <div class="mt-2 inline-block">
           <span class="bg-green-500/20 text-green-400 border border-green-500/50 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center gap-1 w-max group-hover:bg-green-500 group-hover:text-white transition-colors">
@@ -72,8 +72,8 @@ const { label, description, url, cover, price, buttonText } = Astro.props;
     </div>
   </div>
 
-  {/* Ikon Eksternal Link - POSISI SUDAH DIRAPIHKAN (Nggak geser dan kepotong lagi) */}
-  <div class="flex-shrink-0 ml-1 mr-2 sm:mr-3 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all z-10">
+  {/* IKON EXTERNAL LINK - DIGEMBOK ABSOLUT DI POJOK KANAN */}
+  <div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center justify-center flex-shrink-0 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all z-20">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
       <polyline points="15 3 21 3 21 9"></polyline>
