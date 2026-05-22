@@ -28,6 +28,12 @@
           "description": "Platform e-commerce top up game & voucher digital yang saya bangun dari nol.",
           "url": "https://zassstore.id",
           "icon": "website"
+        },
+        {
+          "label": "Zass Flip Gacha V5.1",
+          "description": "Mainkan mini game seru buatan saya dan menangkan diskon menarik!",
+          "url": "#",
+          "icon": "website"
         }
       ]
     },
