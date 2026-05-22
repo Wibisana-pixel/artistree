@@ -17,15 +17,11 @@
     "facebook": "https://facebook.com/Nexyuspay",
     "tiktok": "https://www.tiktok.com/@mynexyus"
   },
-  "booking": {
-    "email": "CEO: Yusuf +62 812 1312 6232",
-    "phone": "CS: +62 838 7918 5234"
-  },
   "shows": [],
   "releases": [],
   "sections": [
     {
-      "title": "LAYANAN UTAMA",
+      "title": "LAYANAN NEXYUSPAY",
       "links": [
         {
           "label": "Saluran WhatsApp Nexyuspay",
@@ -85,23 +81,6 @@
           "price": "Tanya Harga",
           "buttonText": "Konsultasi Gratis",
           "url": "https://wa.me/6281213126232?text=Halo,%20saya%20ingin%20konsultasi%20pembuatan%20website%20organisasi.",
-          "icon": "website"
-        }
-      ]
-    },
-    {
-      "title": "WEBSITE BERMANFAAT",
-      "links": [
-        {
-          "label": "iLovePDF",
-          "description": "Ubah, gabungkan, dan edit file PDF dengan mudah",
-          "url": "https://www.ilovepdf.com/id",
-          "icon": "website"
-        },
-        {
-          "label": "QR Code Generator",
-          "description": "Ubah link, teks, atau kontak apapun menjadi kode QR",
-          "url": "https://www.qr-code-generator.com/",
           "icon": "website"
         }
       ]
