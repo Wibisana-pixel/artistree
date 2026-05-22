@@ -84,41 +84,6 @@
           "icon": "website"
         }
       ]
-    },
-    {
-      "title": "WEBSITE BERMANFAAT",
-      "links": [
-        {
-          "label": "1. iLovePDF",
-          "description": "Ubah, gabungkan, dan edit file PDF dengan mudah",
-          "url": "https://www.ilovepdf.com/id",
-          "icon": "website"
-        },
-        {
-          "label": "2. QR Code Generator",
-          "description": "Ubah link, teks, atau kontak apapun menjadi kode QR",
-          "url": "https://www.qr-code-generator.com/",
-          "icon": "website"
-        },
-        {
-          "label": "3. Canva Education",
-          "description": "Platform desain grafis lengkap untuk pemula",
-          "url": "https://www.canva.com/",
-          "icon": "website"
-        },
-        {
-          "label": "4. Vercel Hosting",
-          "description": "Layanan hosting gratis dan super cepat",
-          "url": "https://vercel.com/",
-          "icon": "website"
-        },
-        {
-          "label": "5. GitHub",
-          "description": "Tempat menyimpan dan mengelola repository kodingan",
-          "url": "https://github.com/",
-          "icon": "website"
-        }
-      ]
     }
   ]
 }
