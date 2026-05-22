@@ -25,10 +25,12 @@
       "links": [
         {
           "label": "Nexyuspay - My Portofolio",
-          "description": "",
+          "description": "Kumpulan hasil sistem dan proyek web buatan saya.",
           "url": "https://portofolio.nexyuspay.my.id",
           "icon": "website"
-        },
+        }
+      ]
+    },
     {
       "title": "LAYANAN UTAMA",
       "links": [
