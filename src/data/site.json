@@ -21,22 +21,14 @@
   "releases": [],
   "sections": [
     {
-      "title": "🔥 MUST SEE: KARYA TERBAIK SAYA",
+      "title": "🔥MY PORTOFOLIO🔥",
       "links": [
         {
-          "label": "ZassStore.id - Top Up Game",
-          "description": "Platform e-commerce top up game & voucher digital yang saya bangun dari nol.",
-          "url": "https://zassstore.id",
+          "label": "Nexyuspay - My Portofolio",
+          "description": "",
+          "url": "https://portofolio.nexyuspay.my.id",
           "icon": "website"
         },
-        {
-          "label": "Zass Flip Gacha V5.1",
-          "description": "Mainkan mini game seru buatan saya dan menangkan diskon menarik!",
-          "url": "#",
-          "icon": "website"
-        }
-      ]
-    },
     {
       "title": "LAYANAN UTAMA",
       "links": [
