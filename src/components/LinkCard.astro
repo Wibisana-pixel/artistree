@@ -1,8 +1,18 @@
 ---
-import RenderIcon from "./RenderIcon.astro";
+// Tanpa Import sama sekali agar 100% aman dari bentrok file
 
-// Menangkap data dari site.json
-const { label, description, url, icon, cover, price, buttonText } = Astro.props;
+interface Props {
+  label: string;
+  url: string;
+  description?: string;
+  icon?: string;
+  cover?: string;
+  price?: string;
+  buttonText?: string;
+  [key: string]: any; // Mencegah error jika ada sisa data lama
+}
+
+const { label, description, url, cover, price, buttonText } = Astro.props;
 ---
 
 <a
@@ -12,7 +22,8 @@ const { label, description, url, icon, cover, price, buttonText } = Astro.props;
   class="group relative flex items-center justify-between p-4 mb-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-violet-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all overflow-hidden"
 >
   <div class="flex items-center gap-4 w-full relative z-10">
-    {/* Gambar Cover Produk pakai img standar agar tidak eror */}
+    
+    {/* Logika Gambar/Ikon Mandiri */}
     {cover ? (
       <div class="flex-shrink-0">
         <img
@@ -21,13 +32,16 @@ const { label, description, url, icon, cover, price, buttonText } = Astro.props;
           class="w-16 h-16 rounded-xl object-cover shadow-md border border-white/10 group-hover:scale-105 transition-transform"
         />
       </div>
-    ) : icon ? (
+    ) : (
       <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-white/5 rounded-xl border border-white/10 group-hover:scale-105 transition-transform">
-        <RenderIcon icon={icon} class="w-8 h-8 text-white/70" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/70">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
       </div>
-    ) : null}
+    )}
 
-    {/* Info Produk */}
+    {/* Info Produk & Layanan */}
     <div class="flex flex-col flex-1 min-w-0">
       <h3 class="text-white font-bold text-lg truncate group-hover:text-violet-300 transition-colors">
         {label}
@@ -58,8 +72,12 @@ const { label, description, url, icon, cover, price, buttonText } = Astro.props;
     </div>
   </div>
 
-  {/* Ikon Eksternal Link SVG Manual Anti Eror */}
+  {/* Ikon Eksternal Link */}
   <div class="flex-shrink-0 ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all z-10">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+      <polyline points="15 3 21 3 21 9"></polyline>
+      <line x1="10" y1="14" x2="21" y2="3"></line>
+    </svg>
   </div>
 </a>
