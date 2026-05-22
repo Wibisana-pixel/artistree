@@ -21,14 +21,16 @@
   "releases": [],
   "sections": [
     {
-      "title": "🔥 MY PORTOFOLIO",
+      "title": "🔥 MUST SEE: KARYA TERBAIK SAYA",
       "links": [
         {
           "label": "ZassStore.id - Top Up Game",
           "description": "Platform e-commerce top up game & voucher digital yang saya bangun dari nol.",
           "url": "https://zassstore.id",
           "icon": "website"
-        },
+        }
+      ]
+    },
     {
       "title": "LAYANAN UTAMA",
       "links": [
