@@ -10,7 +10,7 @@
     "name": "Nexyuspay",
     "description": "Layanan Digital & Produk Kreatif.",
     "bio": "Menyediakan berbagai kebutuhan produk digital, top up, dan aset editing dengan proses cepat",
-    "picture": "/Profil_Nexyuspay.jpeg"
+    "picture": "/img/Profil_Nexyuspay.jpeg"
   },
   "socials": {
     "instagram": "https://www.instagram.com/nexyuspay",
@@ -21,25 +21,7 @@
   "releases": [],
   "sections": [
     {
-      "title": "LAYANAN NEXYUSPAY",
-      "links": [
-        {
-          "label": "Saluran WhatsApp Nexyuspay",
-          "description": "Dapatkan Voucher diskon eksklusif dan info terbaru.",
-          "url": "https://whatsapp.com/channel/0029Vb4DqZIEquiKCgKoyT15",
-          "cover": "/logo-nexyus.png",
-          "icon": "whatsapp"
-        },
-        {
-          "label": "Website Resmi Nexyuspay",
-          "description": "Pusat Top Up & Produk Digital 24 Jam Nonstop.",
-          "url": "https://nexyuspay.my.id",
-          "icon": "website"
-        }
-      ]
-    },
-    {
-      "title": "🔥 MUST SEE: KARYA TERBAIK SAYA",
+      "title": "🔥 MY PORTOFOLIO",
       "links": [
         {
           "label": "ZassStore.id - Top Up Game",
@@ -47,10 +29,20 @@
           "url": "https://zassstore.id",
           "icon": "website"
         },
+    {
+      "title": "LAYANAN UTAMA",
+      "links": [
         {
-          "label": "Zass Flip Gacha V5.1",
-          "description": "Mainkan mini game seru buatan saya dan menangkan diskon menarik!",
-          "url": "#",
+          "label": "Saluran WhatsApp Nexyuspay",
+          "description": "Dapatkan Voucher diskon eksklusif dan info terbaru.",
+          "url": "https://whatsapp.com/channel/0029Vb4DqZIEquiKCgKoyT15",
+          "cover": "/img/Profil_Nexyuspay.jpeg",
+          "icon": "whatsapp"
+        },
+        {
+          "label": "Website Resmi Nexyuspay",
+          "description": "Pusat Top Up & Produk Digital 24 Jam Nonstop.",
+          "url": "https://nexyuspay.my.id",
           "icon": "website"
         }
       ]
@@ -64,7 +56,7 @@
           "price": "Rp 150.000",
           "buttonText": "Pesan Via WhatsApp",
           "url": "https://wa.me/6281213126232?text=Halo%20Yusuf,%20saya%20tertarik%20ingin%20membuat%20website%20Link%20Bio%20Premium.",
-          "cover": "/logo-nexyus.png",
+          "cover": "/img/Profil_Nexyuspay.jpeg",
           "icon": "website"
         },
         {
