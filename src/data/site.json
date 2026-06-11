@@ -26,7 +26,8 @@
         {
           "label": "Nexyuspay - My Portofolio",
           "description": "Kumpulan hasil sistem dan proyek web buatan saya.",
-          "url": "https://portofolio.nexyuspay.my.id"
+          "url": "https://portofolio.nexyuspay.my.id",
+          "icon": "website"
         }
       ]
     },
@@ -37,12 +38,14 @@
           "label": "Saluran WhatsApp Nexyuspay",
           "description": "Dapatkan Voucher diskon eksklusif dan info terbaru.",
           "url": "https://whatsapp.com/channel/0029Vb4DqZIEquiKCgKoyT15",
-          "cover": "/img/Profil_Nexyuspay.jpeg"
+          "cover": "/img/Profil_Nexyuspay.jpeg",
+          "icon": "whatsapp"
         },
         {
           "label": "Website Resmi Nexyuspay",
           "description": "Pusat Top Up & Produk Digital 24 Jam Nonstop.",
-          "url": "https://nexyuspay.my.id"
+          "url": "https://nexyuspay.my.id",
+          "icon": "website"
         }
       ]
     },
@@ -50,25 +53,31 @@
       "title": "🛒 ETALASE PRODUK & LAYANAN",
       "links": [
         {
-          "label": "Link Bio Premium (NexyusTree)",
-          "description": "Sistem website Link-in-Bio modern berbasis Astro & Tailwind. Fitur: Etalase Produk, Pop-up Detail, Integrasi WhatsApp, Animasi Glassmorphism, dan SEO Friendly. Cocok untuk toko digital atau personal branding.",
+          "label": "Jasa Pembuatan Link Bio Premium",
+          "description": "Buat website Link in Bio profesional seperti ini lengkap dengan fitur etalase.",
           "price": "Rp 150.000",
-          "demoUrl": "https://bio.nexyuspay.my.id",
-          "buttonText": "Beli Sekarang",
-          "url": "https://wa.me/6281213126232?text=Halo%20Yusuf,%20saya%20tertarik%20ingin%20membeli%20Link%20Bio%20Premium.",
-          "cover": "/img/Profil_Nexyuspay.jpeg"
+          "buttonText": "Pesan Via WhatsApp",
+          "url": "https://wa.me/6281213126232?text=Halo%20Yusuf,%20saya%20tertarik%20ingin%20membuat%20website%20Link%20Bio%20Premium.",
+          "cover": "/img/Profil_Nexyuspay.jpeg",
+          "icon": "website"
         },
         {
           "label": "Source Code ZassStore",
-          "description": "Script website Top Up Game otomatis dengan fitur payment gateway. Dilengkapi dashboard admin, laporan penjualan, dan sinkronisasi harga produk otomatis.",
-          "price": "Rp 350.000",
-          "demoUrl": "https://zassstore.id",
-          "buttonText": "Beli Via WA",
-          "url": "https://wa.me/6281213126232?text=Halo%20Admin,%20saya%20mau%20order%20Source%20Code%20ZassStore.",
-          "cover": "/img/Profil_Nexyuspay.jpeg"
+          "description": "Script lengkap untuk membuat website top up game otomatis milikmu sendiri.",
+          "price": "Mulai Rp 350.000",
+          "buttonText": "Beli Sekarang",
+          "url": "https://wa.me/6281213126232?text=Halo%20Admin,%20saya%20mau%20bertanya%20tentang%20Source%20Code%20ZassStore.",
+          "icon": "website"
+        },
+        {
+          "label": "Pembuatan Web Organisasi",
+          "description": "Sistem pendaftaran anggota organisasi / instansi berbasis web.",
+          "price": "Tanya Harga",
+          "buttonText": "Konsultasi Gratis",
+          "url": "https://wa.me/6281213126232?text=Halo,%20saya%20ingin%20konsultasi%20pembuatan%20website%20organisasi.",
+          "icon": "website"
         }
       ]
     }
   ]
 }
-  
