@@ -26,8 +26,7 @@
         {
           "label": "Nexyuspay - My Portofolio",
           "description": "Kumpulan hasil sistem dan proyek web buatan saya.",
-          "url": "https://portofolio.nexyuspay.my.id",
-          "icon": "website"
+          "url": "https://portofolio.nexyuspay.my.id"
         }
       ]
     },
@@ -43,8 +42,7 @@
         {
           "label": "Website Resmi Nexyuspay",
           "description": "Pusat Top Up & Produk Digital 24 Jam Nonstop.",
-          "url": "https://nexyuspay.my.id",
-          "icon": "website"
+          "url": "https://nexyuspay.my.id"
         }
       ]
     },
@@ -73,3 +71,4 @@
     }
   ]
 }
+  
