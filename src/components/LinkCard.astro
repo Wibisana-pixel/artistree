@@ -11,148 +11,152 @@ interface Props {
   [key: string]: any;
 }
 
-const { label, description, url, cover, price, buttonText, demoUrl } = Astro.props;
+const { label = "Link", description, url = "#", cover, price, buttonText, demoUrl } = Astro.props;
 const isProduct = !!price;
 
-// Bersihkan nama untuk ID agar tidak error di sistem
+// Membersihkan nama untuk ID Pop-up
 const modalId = `modal-${label.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
 ---
 
-{isProduct ? (
-  <div class="product-wrapper">
-    {/* TAMPILAN DEPAN (KARTU PRODUK ETALASE) */}
-    <button
-      data-target={modalId}
-      class="btn-open-modal w-full group relative flex items-center p-4 pr-14 mb-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-violet-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all overflow-hidden text-left cursor-pointer"
+<>
+  {/* ===== JIKA INI ADALAH PRODUK ETALASE ===== */}
+  {isProduct && (
+    <div class="w-full">
+      {/* TAMPILAN DEPAN KARTU PRODUK */}
+      <button
+        data-target={modalId}
+        class="btn-open-modal w-full group relative flex items-center p-4 pr-14 mb-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-violet-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all overflow-hidden text-left cursor-pointer"
+      >
+        <div class="flex items-center gap-4 w-full relative z-10">
+          {cover && (
+            <div class="flex-shrink-0 relative z-10">
+              <img src={cover} alt={label} class="w-16 h-16 rounded-xl object-cover shadow-md border border-white/10 group-hover:scale-105 transition-transform" />
+            </div>
+          )}
+          <div class="flex flex-col flex-1 min-w-0 relative z-10 pr-2">
+            <h3 class="text-white font-bold text-lg group-hover:text-violet-300 transition-colors break-words">
+              {label}
+            </h3>
+            <div class="mt-1 text-cyan-400 font-extrabold text-sm tracking-wide">{price}</div>
+          </div>
+        </div>
+        
+        {/* Ikon Detail (3 Titik) */}
+        <div class="absolute right-4 top-1/2 -translate-y-1/2 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all z-20">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+        </div>
+      </button>
+
+      {/* JENDELA POP-UP DETAIL SAAT DIKLIK */}
+      <dialog id={modalId} class="p-0 bg-transparent backdrop:bg-black/80 backdrop:backdrop-blur-sm rounded-3xl w-[90%] max-w-md border-none outline-none shadow-2xl">
+        <div class="bg-slate-900 border border-white/20 rounded-3xl overflow-hidden relative">
+          
+          {/* Tombol Close */}
+          <button data-target={modalId} class="btn-close-modal absolute top-3 right-3 z-50 bg-black/50 hover:bg-red-500 text-white rounded-full p-2 transition-colors cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+
+          {/* Gambar Produk di dalam Pop-up */}
+          <div class="relative h-56 w-full bg-black/40">
+              {cover && <img src={cover} alt={label} class="w-full h-full object-cover" />}
+          </div>
+
+          {/* Isi Deskripsi & Tombol Aksi */}
+          <div class="p-6">
+            <h2 class="text-2xl font-bold text-white mb-1">{label}</h2>
+            <div class="text-cyan-400 font-black text-xl mb-4 tracking-tighter">{price}</div>
+            <p class="text-white/70 text-sm leading-relaxed mb-6 break-words">
+              {description}
+            </p>
+
+            <div class="grid grid-cols-2 gap-3">
+              <a href={demoUrl || "#"} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 bg-violet-600/20 hover:bg-violet-600 border border-violet-500 text-white rounded-xl text-xs font-bold uppercase transition-all shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  Live Demo
+              </a>
+              <a href={url} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 bg-green-600 hover:bg-green-500 text-white rounded-xl text-xs font-bold uppercase transition-all shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" /><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" /></svg>
+                  {buttonText || "Beli"}
+              </a>
+            </div>
+          </div>
+        </div>
+      </dialog>
+    </div>
+  )}
+
+  {/* ===== JIKA INI HANYA LINK BIASA ===== */}
+  {!isProduct && (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group relative flex items-center p-4 pr-14 mb-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-violet-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all overflow-hidden"
     >
       <div class="flex items-center gap-4 w-full relative z-10">
-        {cover && (
+        {cover ? (
           <div class="flex-shrink-0 relative z-10">
             <img src={cover} alt={label} class="w-16 h-16 rounded-xl object-cover shadow-md border border-white/10 group-hover:scale-105 transition-transform" />
           </div>
+        ) : (
+          <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-white/5 rounded-xl border border-white/10 group-hover:scale-105 transition-transform relative z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/70">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+          </div>
         )}
+
         <div class="flex flex-col flex-1 min-w-0 relative z-10 pr-2">
           <h3 class="text-white font-bold text-lg group-hover:text-violet-300 transition-colors break-words">
             {label}
           </h3>
-          <div class="mt-1 text-cyan-400 font-extrabold text-sm tracking-wide">{price}</div>
+          {description && (
+            <p class="text-white/60 text-sm leading-tight mt-1 break-words">
+              {description}
+            </p>
+          )}
         </div>
       </div>
-      
-      {/* Ikon Tiga Titik / Detail */}
-      <div class="absolute right-4 top-1/2 -translate-y-1/2 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all z-20">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+
+      <div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center justify-center flex-shrink-0 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all z-20">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
       </div>
-    </button>
-
-    {/* JENDELA POP-UP DETAIL */}
-    <dialog id={modalId} class="p-0 bg-transparent backdrop:bg-black/80 backdrop:backdrop-blur-sm rounded-3xl overflow-hidden w-[90%] max-w-md border-none outline-none shadow-2xl">
-      <div class="bg-slate-900 border border-white/20 rounded-3xl overflow-hidden relative">
-        
-        {/* Tombol Close */}
-        <button data-target={modalId} class="btn-close-modal absolute top-3 right-3 z-50 bg-black/50 text-white rounded-full p-2 hover:bg-red-500 transition-colors cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-        </button>
-
-        {/* Gambar Produk */}
-        <div class="relative h-56 w-full bg-black/40">
-            {cover && <img src={cover} alt={label} class="w-full h-full object-cover" />}
-        </div>
-
-        {/* Isi Detail */}
-        <div class="p-6">
-          <h2 class="text-2xl font-bold text-white mb-1">{label}</h2>
-          <div class="text-cyan-400 font-black text-xl mb-4 tracking-tighter">{price}</div>
-          <p class="text-white/70 text-sm leading-relaxed mb-6 break-words">
-            {description}
-          </p>
-
-          {/* Tombol Aksi */}
-          <div class="grid grid-cols-2 gap-3">
-            <a href={demoUrl || "#"} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 bg-violet-600/20 hover:bg-violet-600 border border-violet-500 text-white rounded-xl text-xs font-bold uppercase transition-all shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                Live Demo
-            </a>
-            
-            <a href={url} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-4 bg-green-600 hover:bg-green-500 text-white rounded-xl text-xs font-bold uppercase transition-all shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" /><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" /></svg>
-                {buttonText || "Beli"}
-            </a>
-          </div>
-        </div>
-      </div>
-    </dialog>
-  </div>
-) : (
-  /* TAMPILAN LINK BIASA (Contoh: Web Resmi / WA / Portofolio) */
-  <a
-    href={url}
-    target="_blank"
-    rel="noopener noreferrer"
-    class="group relative flex items-center p-4 pr-14 mb-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-violet-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all overflow-hidden"
-  >
-    <div class="flex items-center gap-4 w-full relative z-10">
-      {cover ? (
-        <div class="flex-shrink-0 relative z-10">
-          <img src={cover} alt={label} class="w-16 h-16 rounded-xl object-cover shadow-md border border-white/10 group-hover:scale-105 transition-transform" />
-        </div>
-      ) : (
-        <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-white/5 rounded-xl border border-white/10 group-hover:scale-105 transition-transform relative z-10">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/70">
-            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-          </svg>
-        </div>
-      )}
-
-      <div class="flex flex-col flex-1 min-w-0 relative z-10 pr-2">
-        <h3 class="text-white font-bold text-lg group-hover:text-violet-300 transition-colors break-words">
-          {label}
-        </h3>
-        {description && (
-          <p class="text-white/60 text-sm leading-tight mt-1 break-words">
-            {description}
-          </p>
-        )}
-      </div>
-    </div>
-
-    <div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center justify-center flex-shrink-0 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all z-20">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
-        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-        <polyline points="15 3 21 3 21 9"></polyline>
-        <line x1="10" y1="14" x2="21" y2="3"></line>
-      </svg>
-    </div>
-  </a>
-)}
+    </a>
+  )}
+</>
 
 <script>
-  // Script khusus browser (Biar Vercel Server gak error)
   if (typeof window !== 'undefined') {
     document.addEventListener('DOMContentLoaded', () => {
-      // Logic Buka Pop-up
       const openBtns = document.querySelectorAll('.btn-open-modal');
       openBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
           const targetId = btn.getAttribute('data-target');
           if (targetId) {
-            const modal = document.getElementById(targetId) as HTMLDialogElement;
-            if (modal) modal.showModal();
+            const modal = document.getElementById(targetId) as any;
+            if (modal && typeof modal.showModal === 'function') {
+              modal.showModal();
+            }
           }
         });
       });
 
-      // Logic Tutup Pop-up
       const closeBtns = document.querySelectorAll('.btn-close-modal');
       closeBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
           const targetId = btn.getAttribute('data-target');
           if (targetId) {
-            const modal = document.getElementById(targetId) as HTMLDialogElement;
-            if (modal) modal.close();
+            const modal = document.getElementById(targetId) as any;
+            if (modal && typeof modal.close === 'function') {
+              modal.close();
+            }
           }
         });
       });
@@ -163,6 +167,6 @@ const modalId = `modal-${label.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
 <style>
   dialog::backdrop {
     background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(5px);
   }
 </style>
