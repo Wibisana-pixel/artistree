@@ -8,24 +8,22 @@ interface Props {
   price?: string;
   buttonText?: string;
   demoUrl?: string;
-  [key: string]: any;
 }
 
-const { label = "Link", description, url = "#", cover, price, buttonText, demoUrl } = Astro.props;
-const isProduct = !!price;
+const { label = "Menu", description, url = "#", cover, price, buttonText, demoUrl } = Astro.props;
 
-// Membersihkan nama untuk ID Pop-up
-const modalId = `modal-${label.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
+// Buat ID unik yang aman
+const modalId = "modal-" + label.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
 ---
 
-<>
-  {/* ===== JIKA INI ADALAH PRODUK ETALASE ===== */}
-  {isProduct && (
+{/* Bungkusan <div> Nyata yang tidak akan disembunyikan oleh sistem */}
+<div class="w-full mb-4">
+  {price ? (
     <div class="w-full">
       {/* TAMPILAN DEPAN KARTU PRODUK */}
       <button
         data-target={modalId}
-        class="btn-open-modal w-full group relative flex items-center p-4 pr-14 mb-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-violet-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all overflow-hidden text-left cursor-pointer"
+        class="btn-open-modal w-full group relative flex items-center p-4 pr-14 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-violet-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all overflow-hidden text-left cursor-pointer"
       >
         <div class="flex items-center gap-4 w-full relative z-10">
           {cover && (
@@ -83,15 +81,13 @@ const modalId = `modal-${label.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
         </div>
       </dialog>
     </div>
-  )}
-
-  {/* ===== JIKA INI HANYA LINK BIASA ===== */}
-  {!isProduct && (
+  ) : (
+    /* JIKA INI HANYA LINK BIASA */
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      class="group relative flex items-center p-4 pr-14 mb-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-violet-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all overflow-hidden"
+      class="w-full group relative flex items-center p-4 pr-14 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-violet-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all overflow-hidden"
     >
       <div class="flex items-center gap-4 w-full relative z-10">
         {cover ? (
@@ -128,7 +124,7 @@ const modalId = `modal-${label.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
       </div>
     </a>
   )}
-</>
+</div>
 
 <script>
   if (typeof window !== 'undefined') {
