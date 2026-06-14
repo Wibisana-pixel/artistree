@@ -35,17 +35,18 @@
       "title": "LAYANAN UTAMA",
       "links": [
         {
+          "label": "Website Nexyuspay",
+          "description": "Pusat Top Up & Produk Digital 24 Jam Nonstop.",
+          "url": "https://nexyuspay.my.id",
+          "cover": "/img/Profil_Nexyuspay.jpeg",
+          "icon": "website"
+        },
+        {
           "label": "Saluran WhatsApp Nexyuspay",
           "description": "Dapatkan Voucher diskon eksklusif dan info terbaru.",
           "url": "https://whatsapp.com/channel/0029Vb4DqZIEquiKCgKoyT15",
           "cover": "/img/Profil_Nexyuspay.jpeg",
           "icon": "whatsapp"
-        },
-        {
-          "label": "Website Resmi Nexyuspay",
-          "description": "Pusat Top Up & Produk Digital 24 Jam Nonstop.",
-          "url": "https://nexyuspay.my.id",
-          "icon": "website"
         }
       ]
     }
