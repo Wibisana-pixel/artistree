@@ -1,0 +1,35 @@
+---
+import ProductCard from "./ProductCard.astro";
+
+const { links, title } = Astro.props;
+---
+
+<section class="link-section bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/10 shadow-xl mb-6">
+  {title && <h2 class="text-xl font-bold mb-6 text-white text-center uppercase tracking-wider">{title}</h2>}
+  
+  <div class="grid grid-cols-2 gap-4">
+    {links.map((link: any, index: number) => (
+      <ProductCard {...link} id={`product-${title.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${index}`} />
+    ))}
+  </div>
+</section>
+
+<script>
+  // Close dialog when clicking outside the modal content (on the backdrop)
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName === 'DIALOG') {
+      const dialog = target as HTMLDialogElement;
+      const rect = dialog.getBoundingClientRect();
+      const isInDialog = (
+        rect.top <= e.clientY &&
+        e.clientY <= rect.top + rect.height &&
+        rect.left <= e.clientX &&
+        e.clientX <= rect.left + rect.width
+      );
+      if (!isInDialog) {
+        dialog.close();
+      }
+    }
+  });
+</script>
