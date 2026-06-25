@@ -43,6 +43,13 @@
           "icon": "website"
         },
         {
+          "label": "Ulasan Nexyuspay",
+          "description": "Lihat bagaimana pendapat pelanggan tentang Nexyuspay.",
+          "url": "https://ulasan.nexyuspay.my.id/",
+          "cover": "/img/Profil_Nexyuspay.jpeg",
+          "icon": "website"
+        },
+        {
           "label": "Saluran WhatsApp Nexyuspay",
           "description": "Dapatkan Voucher diskon eksklusif dan info terbaru.",
           "url": "https://whatsapp.com/channel/0029Vb4DqZIEquiKCgKoyT15",
