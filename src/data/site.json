@@ -82,7 +82,7 @@
           "icon": "website"
         },
         {
-          "label": "Pembuatan Web Organisasi",
+          "label": "Pembuatan Web organisasi",
           "description": "Sistem pendaftaran anggota organisasi / instansi berbasis web.",
           "price": "Tanya Harga",
           "buttonText": "Konsultasi Gratis",
@@ -91,6 +91,18 @@
           "icon": "website"
         }
       ]
-    }
+    },
+    {
+      "title": "Domain & Hosting Murah",
+      "links": [
+        {
+          "label": "Anymhost",
+          "description": "AnymHost merupakan penyedia kebutuhan layanan Digital di Indonesia. Kami selalu berinovasi dan mengembangkan layanan kami agar bisa memberikan yang terbaik. Kami menyediakan layanan Hosting, Domain, Server, serta Management Website.",
+          "url": "https://clients.anymhost.id/aff.php?aff=960",
+          "cover": "/img/Profil_Nexyuspay.jpeg",
+          "icon": "website"
+        }
+      ]
+    },
   ]
 }
