@@ -5,6 +5,7 @@ import Header from "../components/Header.astro";
 import UpcomingShows from "../components/UpcomingShows.astro";
 import ReleasesList from "../components/ReleasesList.astro";
 import ExternalLinks from "../components/ExternalLinks.astro";
+import ProductSection from "../components/ProductSection.astro";
 import Booking from "../components/Booking.astro";
 import Footer from "../components/Footer.astro";
 import type { Theme, FontPreset } from "../types/theme";
@@ -58,9 +59,13 @@ const showSections = sections.length > 0;
     {showReleases && <ReleasesList releases={releases} />}
 
     {/* MENCETAK KOTAK TERPISAH UNTUK SETIAP KELOMPOK */}
-    {showSections && sections.map((section) => (
-      <ExternalLinks title={section.title} links={section.links} />
-    ))}
+    {showSections && sections.map((section) => {
+      const isProductSection = section.title.includes("ETALASE") || section.links.some(link => link.price || link.buttonText);
+      if (isProductSection) {
+        return <ProductSection title={section.title} links={section.links} />
+      }
+      return <ExternalLinks title={section.title} links={section.links} />
+    })}
 
     {showBooking && <Booking {...site.booking} />}
 
