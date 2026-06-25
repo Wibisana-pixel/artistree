@@ -37,6 +37,17 @@ const FONT_LINKS: Record<FontPreset, string> = {
     <title>{title}</title>
     <meta name="description" content={description} />
   </head>
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P80QQBMN4V"></script>
+<script is:inline> 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P80QQBMN4V');
+</script>
+</head>
   <body>
     <div
       class="min-h-screen bg-gradient-to-br from-gradient-from via-gradient-via to-gradient-to relative overflow-hidden"
