@@ -2,16 +2,26 @@
 import ProductCard from "./ProductCard.astro";
 
 const { links, title } = Astro.props;
+
+const sectionId = `product-section-${title.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`;
 ---
 
-<section class="link-section bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/10 shadow-xl mb-6">
+<section id={sectionId} class="product-section link-section bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/10 shadow-xl mb-6">
   {title && <h2 class="text-xl font-bold mb-6 text-white text-center uppercase tracking-wider">{title}</h2>}
   
   <div class="grid grid-cols-2 gap-4">
     {links.map((link: any, index: number) => (
-      <ProductCard {...link} id={`product-${title.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}-${index}`} />
+      <div class={`product-item ${index >= 10 ? 'hidden' : ''}`} data-index={index}>
+        <ProductCard {...link} id={`${sectionId}-item-${index}`} />
+      </div>
     ))}
   </div>
+
+  {links.length > 10 && (
+    <button class="product-toggle-btn mt-5 w-full py-2.5 px-4 bg-white/5 hover:bg-white/20 text-white rounded-xl border border-white/20 transition-all text-sm font-semibold tracking-wide" data-total={links.length} data-visible="10">
+      Lihat Lebih Banyak 🔽
+    </button>
+  )}
 </section>
 
 <script>
@@ -30,6 +40,42 @@ const { links, title } = Astro.props;
       if (!isInDialog) {
         dialog.close();
       }
+    }
+  });
+
+  // Handle Load More / Show Less logic
+  document.querySelectorAll('.product-section').forEach(section => {
+    const btn = section.querySelector('.product-toggle-btn');
+    const items = section.querySelectorAll('.product-item');
+    
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const total = parseInt(btn.getAttribute('data-total') || '0');
+        let visible = parseInt(btn.getAttribute('data-visible') || '10');
+        
+        if (visible < total) {
+          // Show next 10 items
+          const nextVisible = Math.min(visible + 10, total);
+          for (let i = visible; i < nextVisible; i++) {
+            items[i].classList.remove('hidden');
+          }
+          btn.setAttribute('data-visible', nextVisible.toString());
+          
+          if (nextVisible >= total) {
+            btn.innerHTML = 'Tampilkan Lebih Sedikit 🔼';
+          }
+        } else {
+          // Hide items beyond the first 10
+          for (let i = 10; i < total; i++) {
+            items[i].classList.add('hidden');
+          }
+          btn.setAttribute('data-visible', '10');
+          btn.innerHTML = 'Lihat Lebih Banyak 🔽';
+          
+          // Scroll back to the top of the section slightly offset
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
     }
   });
 </script>
