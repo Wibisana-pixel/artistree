@@ -21,12 +21,12 @@
   "releases": [],
   "sections": [
     {
-      "title": "🔥MY PORTOFOLIO🔥",
+      "title": "BELANJA AMAN VIA MARKETPLACE TOKO KAMI)",
       "links": [
         {
           "label": "Nexyuspay - My Portofolio",
-          "description": "Kumpulan hasil sistem dan proyek web buatan saya.",
-          "url": "https://portofolio.nexyuspay.my.id",
+          "description": "Nikmati promo gratis ongkir ekstra, voucher diskon harian, dan kemudahan bayar di tempat (COD).",
+          "url": "shopee.co.id/nexyuspay",
           "cover": "/img/Profil_Nexyuspay.jpeg",
           "icon": "website"
         }
@@ -95,15 +95,6 @@
           "buttonText": "Konsultasi/Beli Sekarang",
           "url": "https://wa.me/6281213126232?text=Halo%20Admin,%20saya%20mau%20bertanya%20tentang%20SPekt%hemat%205000+%akses%20editing.",
           "cover": "/img/2_20260626_180322_0001.png",
-          "icon": "website"
-        },
-        {
-          "label": "PAKET UNTUK PEMULA - LANGSUNG BISA JUALAN PRODUK DIGITAL TANPA RIBET",
-          "description": "UNTUK 10 ORANG TERCEPAT! Mau mulai menjual produk digital tapi bingung harus mulai dari mana? Tenang, kami punya solusinya! Dengan PAKET PEMULA ini, kamu akan langsung siap jualan hanya modal HP! 📲 📦 Yang kamu dapatkan: ✅ Ebook Eksklusif: Panduan untuk Pemula Jualan Produk Digital dengan Lynk.id – step by step lengkap mulai dari cara membuat akun, upload produk, hingga strategi promosi! ✅ 500+ Produk Digital Siap Jual – langsung bisa kamu pasarkan tanpa ribet bikin sendiri! ✅ Bonus 120+ Produk Digital Siap Jual",
-          "price": "Rp 30.000",
-          "buttonText": "Konsultasi/Beli Sekarang",
-          "url": "https://wa.me/6281213126232?text=Halo%20Admin,%20saya%20mau%20bertanya%20tentang%20paket%20pemula%20langsung%20jualan%20produk%20digital.",
-          "cover": "/img/3_20260626_180322_0002.png",
           "icon": "website"
         },
         {
