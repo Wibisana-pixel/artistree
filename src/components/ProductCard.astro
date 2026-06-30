@@ -93,7 +93,7 @@ const dialogId = `dialog-${id}`;
         </a>
 
         {/* Tombol Shopee */}
-        {shopeeUrl ? (
+        {shopeeUrl && shopeeUrl.trim() !== "" ? (
           <a
             href={shopeeUrl}
             target="_blank"
@@ -125,4 +125,3 @@ const dialogId = `dialog-${id}`;
     </div>
   </div>
 </dialog>
-
