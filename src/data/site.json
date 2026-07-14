@@ -21,18 +21,6 @@
   "releases": [],
   "sections": [
     {
-      "title": "BELANJA VIA MARKETPLACE TOKO KAMI",
-      "links": [
-        {
-          "label": "Shopee",
-          "description": "Nikmati promo gratis ongkir ekstra, voucher diskon harian, dan kemudahan bayar di tempat (COD).",
-          "url": "https://s.shopee.co.id/50X4I4bR0y",
-          "cover": "/img/Profil_Nexyuspay.jpeg",
-          "icon": "website"
-        }
-      ]
-    },
-    {
       "title": "LAYANAN UTAMA",
       "links": [
         {
@@ -41,7 +29,12 @@
           "url": "https://nexyuspay.my.id",
           "cover": "/img/Profil_Nexyuspay.jpeg",
           "icon": "website"
-        },
+        }
+      ]
+    },
+    {
+      "title": "LAYANAN LAINNYA",
+      "links": [
         {
           "label": "Ulasan Nexyuspay",
           "description": "Lihat bagaimana pendapat pelanggan tentang Nexyuspay.",
