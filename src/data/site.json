@@ -36,6 +36,13 @@
       "title": "LAYANAN LAINNYA",
       "links": [
         {
+          "label": "YouTube Nexyuspay",
+          "description": "Lihat tutorial cara berbelanja di Nexyuspay.",
+          "url": "https://www.youtube.com/@nexyuspay",
+          "cover": "/img/YouTube.png",
+          "icon": "website"
+        },
+        {
           "label": "Ulasan Nexyuspay",
           "description": "Lihat bagaimana pendapat pelanggan tentang Nexyuspay.",
           "url": "https://ulasan.nexyuspay.my.id/",
